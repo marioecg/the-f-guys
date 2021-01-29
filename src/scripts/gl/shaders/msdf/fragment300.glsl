@@ -2,9 +2,9 @@
 precision highp float;
 precision highp int;
 
-uniform sampler2D tMap;
 uniform float uTime;
 uniform vec3 uColor;
+uniform sampler2D tMap;
 
 in vec2 vUv;
 out vec4 color;

@@ -3,9 +3,11 @@
 precision highp float;
 precision highp int;
 
-uniform sampler2D tMap;
-
 varying vec2 vUv;
+
+uniform float uTime;
+uniform vec3 uColor;
+uniform sampler2D tMap;
 
 void main() {
   vec3 tex = texture2D(tMap, vUv).rgb;
@@ -15,6 +17,6 @@ void main() {
 
   if (alpha < 0.01) discard;
   
-  gl_FragColor.rgb = vec3(0.0);
+  gl_FragColor.rgb = uColor;
   gl_FragColor.a = alpha;
 }
