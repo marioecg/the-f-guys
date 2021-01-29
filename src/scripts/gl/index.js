@@ -24,13 +24,17 @@ export class Gl {
     this.camera.position.set(0, 0, 5);
     this.camera.lookAt([0, 0, 0]);
 
-    this.controls = new Orbit(this.camera);
+    this.controls = new Orbit(this.camera, {
+      minDistance: 2.5,
+      maxDistance: 10,      
+    });
 
     this.scene = new Transform();
 
     // Post copies the current renderer values (width, height, dpr) if none are passed in
     this.post = new Post(this.gl);
     this.pass = null;
+    this.resolution = { value: new Vec2() };
 
     this.time = 0;
     this.text = null;
@@ -57,6 +61,7 @@ export class Gl {
     
     // Need to resize post as render targets need to be re-created
     this.post.resize();    
+    this.resolution.value.set(this.gl.canvas.width, this.gl.canvas.height);
   }
 
   createPass() {
@@ -67,6 +72,7 @@ export class Gl {
       // shaders found within the class.
       fragment,
       uniforms: {
+        uResolution: this.resolution,
         uTime: { value: 0 },
       },
     });    
