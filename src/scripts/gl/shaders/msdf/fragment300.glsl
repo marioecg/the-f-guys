@@ -4,6 +4,7 @@ precision highp int;
 
 uniform sampler2D tMap;
 uniform float uTime;
+uniform vec3 uColor;
 
 in vec2 vUv;
 out vec4 color;
@@ -16,7 +17,6 @@ void main() {
 
   if (alpha < 0.01) discard;
 
-  
-  color.rgb = vec3(0.0);
+  color.rgb = uColor;
   color.a = alpha;
 }

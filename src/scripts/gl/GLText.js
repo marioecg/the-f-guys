@@ -16,6 +16,7 @@ export class GLText extends Transform {
     this.gl = context;
 
     this.string = args.text;
+    this.color = args.color;
 
     this.texture = null;
     this.program = null;
@@ -44,6 +45,7 @@ export class GLText extends Transform {
       uniforms: {
         tMap: { value: this.texture },
         uTime: { value: 0 },
+        uColor: { value: this.color }
       },
       transparent: true,
       cullFace: null,

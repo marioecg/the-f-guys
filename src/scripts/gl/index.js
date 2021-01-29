@@ -15,7 +15,7 @@ export class Gl {
     });
 
     this.gl = this.renderer.gl;
-    this.gl.clearColor(1, 1, 1, 1);
+    this.gl.clearColor(0, 0, 0, 0);
     document.body.appendChild(this.gl.canvas);
 
     this.camera = new Camera(this.gl, { fov: 35 });
