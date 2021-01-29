@@ -5,7 +5,7 @@ class App {
   constructor() {
     this.tl = gsap.timeline({
       paused: true,
-      delay: 2,
+      delay: 1,
     });
     this.tl
       .add(this.animateGl())
