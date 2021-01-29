@@ -34,6 +34,7 @@ export function create3DText(ctx) {
   group.addChild(text3);
 
   group.position.set(-text3width / 2, (text3height / 2) * 1.1, 0);
+  group.position.y -= 0.05;
 
   return group;
 }
