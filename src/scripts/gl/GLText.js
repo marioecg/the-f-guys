@@ -1,5 +1,5 @@
 import { Geometry, Texture, Program, Mesh, Text, Transform } from 'ogl';
-import { Gl } from './index';
+import Gl from './index';
 
 import vertex100 from './shaders/msdf/vertex100.glsl';
 import fragment100 from './shaders/msdf/fragment100.glsl';

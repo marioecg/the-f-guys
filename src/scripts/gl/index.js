@@ -9,7 +9,7 @@ import { create3DText } from '../util';
 
 import fragment from './shaders/fx/fragment.glsl';
 
-export class Gl {
+export default new class {
   constructor() {
     this.renderer = new Renderer({
       dpr: Math.min(window.devicePixelRatio, 2),
@@ -74,6 +74,8 @@ export class Gl {
       uniforms: {
         uResolution: this.resolution,
         uTime: { value: 0 },
+        uMask: { value : 0 },
+        uSplit: { value : 0 },
       },
     });    
   }
