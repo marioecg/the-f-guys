@@ -1,0 +1,55 @@
+.marquee {
+  position: relative;
+  height: 10vw;
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+
+  &__wrapper {
+    position: absolute;
+    white-space: nowrap;
+    width: 200%;
+    height: 100%;
+    margin-top: 3px;
+    overflow: hidden;
+    animation: marquee 10s linear infinite;
+  }
+
+  &__block {
+    display: flex;
+    width: 50%;    
+    float: left;
+  }
+
+  &__baby {
+    margin: 0 0.75vw;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: $m) {
+  .marquee {
+    height: 3vw;
+  
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+    }
+  
+    &__block {
+
+    }
+  
+    &__baby {
+      margin: 0 0.75vw;
+      font-size: 1.5vw;
+    }
+  }  
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
